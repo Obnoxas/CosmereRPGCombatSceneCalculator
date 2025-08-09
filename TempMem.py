@@ -1,8 +1,12 @@
 class MemoryBank():
     def __init__(self, tier, number, difficulty):
-        self.PartyTier = int(tier)
-        self.PartyNumber = int(number)
-        self.EncounterDifficulty = difficulty.lower()
+        try:
+            self.PartyTier = int(tier)
+            self.PartyNumber = int(number)
+            self.EncounterDifficulty = difficulty.lower()
+        except ValueError:
+            print("Please use digits for the party Tier and number of party members!")
+            exit()
 
     def ValidityCheck(self):
         if 0 >= self.PartyTier or 5 <= self.PartyTier:
