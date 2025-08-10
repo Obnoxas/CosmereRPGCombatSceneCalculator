@@ -1,5 +1,6 @@
 from TempMem import *
 from Calculator import *
+from Adversaries import *
 
 def main():
     memory = MemoryBank(input("What Tier is your party? (Pg 24): "), input("How many characters are in your party?: "), input("Is this Combat Scene Easy, Medium, or Hard?: "))

@@ -1,4 +1,5 @@
 from TempMem import *
+from Adversaries import *
 
 def EasyThreat(PartyNumber):
     return PartyNumber * 0.5
