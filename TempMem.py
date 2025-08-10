@@ -4,6 +4,7 @@ class MemoryBank():
             self.PartyTier = int(tier)
             self.PartyNumber = int(number)
             self.EncounterDifficulty = difficulty.lower()
+            self.Threat = 0
         except ValueError:
             print("Please use digits for the party Tier and number of party members!")
             exit()
@@ -19,6 +20,9 @@ class MemoryBank():
             print("Invalid dificulty!")
             exit()
 
+    def UpdateThreat(self, NewThreat):
+        self.Threat = NewThreat
+
 
     def log(self):
-        print(f" The party is Tier {self.PartyTier}, there are {self.PartyNumber} people in the party, and the Combat Scene's difficulty is {self.EncounterDifficulty}!")
+        print(f"The party is Tier {self.PartyTier}, there are {self.PartyNumber} people in the party, and the Combat Scene's difficulty is {self.EncounterDifficulty}! Current Threat is {self.Threat}!")
