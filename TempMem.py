@@ -5,6 +5,9 @@ class MemoryBank():
             self.PartyNumber = int(number)
             self.EncounterDifficulty = difficulty.lower()
             self.Threat = 0
+            self.MinionCount = 0
+            self.RivalCount = 0
+            self.BossCount = 0
         except ValueError:
             print("Please use digits for the party Tier and number of party members!")
             exit()
