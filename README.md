@@ -6,5 +6,3 @@ Simply run the main program and follow the instructions, the tool will calculate
 
 Current issues (will be fixed as I continue work on this project):
 Can't calculate Bosses
-Breaks above tier 1 (both party and adversary calculation)
-Breaks (but slightly less) when Threat is X.5

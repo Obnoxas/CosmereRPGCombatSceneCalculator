@@ -16,6 +16,7 @@ def Calculation(tier, threat, partytier):
 
     while clock > 0:
         minion = Minion(tier, partytier)
-        count += tier
+        minion.log() # DEBUG TEST, PLEASE DELETE
+        count += 1
         clock -= minion.RelativeThreat
     return count
