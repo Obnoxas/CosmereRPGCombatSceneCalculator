@@ -6,8 +6,11 @@ class MemoryBank():
             self.EncounterDifficulty = difficulty.lower()
             self.Threat = 0
             self.MinionCount = 0
+            self.TieredMinionCount = 0
             self.RivalCount = 0
+            self.TieredRivalCount = 0
             self.BossCount = 0
+            self.MaxBosses = 0
         except ValueError:
             print("Please use digits for the party Tier and number of party members!")
             exit()
@@ -19,9 +22,9 @@ class MemoryBank():
         if 0 >= self.PartyNumber:
             print("Invalid party size!")
             exit()
-        if self.EncounterDifficulty not in ("easy", "medium", "hard"):
-            print("Invalid dificulty!")
-            exit()
+        if self.EncounterDifficulty not in ("easy", "average", "hard"):
+                print("Invalid dificulty!")
+                exit()
 
     def UpdateThreat(self, NewThreat):
         self.Threat = NewThreat
