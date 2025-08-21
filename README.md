@@ -5,4 +5,4 @@ A simple calculator to help quickly build Combat Scenes in the Cosmere RPG by Br
 Simply run the main program and follow the instructions, the tool will calculate the possible combinations of enemy types to match the correct Threat level. This is just a guideline, tune the result to your party!
 
 Current issues (will be fixed as I continue work on this project):
-Can't calculate Bosses
+Calculation ends after the first round of Boss calculation (this will be fixed very soon)

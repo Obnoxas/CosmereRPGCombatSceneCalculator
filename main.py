@@ -12,41 +12,124 @@ def main():
         memory.UpdateThreat(MediumThreat(memory.PartyNumber))
     if memory.EncounterDifficulty == "hard":
         memory.UpdateThreat(HardThreat(memory.PartyNumber))
-    
-    memory.log() # DEBUG TEST, PLEASE DELETE
+        
+    memory.Responses.append("Your options are:")
 
-    print("Your options are:")
+    memory.Responses.append("TIER 1")
 
-    print("TIER 1")
+    memory.MinionCount = MinionCalculation(1, memory.Threat, memory.PartyTier)
+    memory.MaxBosses =  BossCalculation(1, memory.Threat, memory.PartyTier)
 
-    memory.MinionCount = Calculation(1, memory.Threat, memory.PartyTier)
+    for e in range(memory.MaxBosses):
+        if memory.TieredRivalCount < 4:
+            for i in range(abs(-memory.MinionCount // 2)):
+                memory.RivalCount += 1
+                memory.TieredRivalCount += 1
+                response = (f"- {memory.MinionCount - (2 * i)} Tier 1 Minions, {i} Tier 1 Rivals, and {memory.BossCount} Tier 1 Bosses")
+                if response not in memory.Responses:
+                    memory.Responses.append(response)
+                memory.TieredMinionCount = memory.MinionCount - (2 * i)
+        if memory.RivalCount >= 4:
+            for i in range(abs(-memory.RivalCount // 4)):
+                if memory.RivalCount >= 4:
+                    response = (f"- {memory.TieredMinionCount} Tier 1 Minions, {memory.RivalCount - (4 * (i + 1))} Tier 1 Rivals, and {i + 1} Tier 1 Bosses")
+                    if response not in memory.Responses:
+                        memory.Responses.append(response)
+                    memory.TieredRivalCount -= 4
+                else:
+                    pass
+            memory.RivalCount = 0
 
-    for i in range(abs(-memory.MinionCount // 2)):
-        print(f"- {memory.MinionCount - (2 * i)} Tier 1 Minions, {i} Tier 1 Rivals, and ? Tier 1 Bosses")
+    memory.Responses.append("")
+    memory.Responses.append("TIER 2")
 
-    print("")
-    print("TIER 2")
+    memory.MinionCount = MinionCalculation(2, memory.Threat, memory.PartyTier)
+    memory.RivalCount = 0
+    memory.BossCount = 0
+    memory.MaxBosses =  BossCalculation(2, memory.Threat, memory.PartyTier)
+    memory.TieredMinionCount = 0
+    memory.TieredRivalCount = 0
 
-    memory.MinionCount = Calculation(2, memory.Threat, memory.PartyTier)
+    for e in range(memory.MaxBosses):
+        if memory.TieredRivalCount < 4:
+            for i in range(abs(-memory.MinionCount // 2)):
+                memory.RivalCount += 1
+                memory.TieredRivalCount += 1
+                response = (f"- {memory.MinionCount - (2 * i)} Tier 2 Minions, {i} Tier 2 Rivals, and {memory.BossCount} Tier 2 Bosses")
+                if response not in memory.Responses:
+                    memory.Responses.append(response)
+                memory.TieredMinionCount = memory.MinionCount - (2 * i)
+        else:
+            for i in range(abs(-memory.RivalCount // 4)):
+                if memory.TieredRivalCount >= 4:
+                    response = (f"- {memory.TieredMinionCount} Tier 2 Minions, {memory.RivalCount - (4 * (i + 1))} Tier 2 Rivals, and {i + 1} Tier 2 Bosses")
+                    if response not in memory.Responses:
+                        memory.Responses.append(response)
+                    memory.TieredRivalCount -= 4
+                    memory.BossCount += 1
+                else:
+                    pass
 
-    for i in range(abs(-memory.MinionCount // 2)):
-        print(f"- {memory.MinionCount - (2 * i)} Tier 2 Minions, {i} Tier 2 Rivals, and ? Tier 2 Bosses")
+    memory.Responses.append("")
+    memory.Responses.append("TIER 3")
 
-    print("")
-    print("TIER 3")
+    memory.MinionCount = MinionCalculation(3, memory.Threat, memory.PartyTier)
+    memory.RivalCount = 0
+    memory.BossCount = 0
+    memory.MaxBosses =  BossCalculation(3, memory.Threat, memory.PartyTier)
+    memory.TieredMinionCount = 0
+    memory.TieredRivalCount = 0
 
-    memory.MinionCount = Calculation(3, memory.Threat, memory.PartyTier)
+    for e in range(memory.MaxBosses):
+        if memory.TieredRivalCount < 4:
+            for i in range(abs(-memory.MinionCount // 2)):
+                memory.RivalCount += 1
+                memory.TieredRivalCount += 1
+                response = (f"- {memory.MinionCount - (2 * i)} Tier 3 Minions, {i} Tier 3 Rivals, and {memory.BossCount} Tier 3 Bosses")
+                if response not in memory.Responses:
+                    memory.Responses.append(response)
+                memory.TieredMinionCount = memory.MinionCount - (2 * i)
+        if memory.RivalCount >= 4:
+            for i in range(abs(-memory.RivalCount // 4)):
+                if memory.TieredRivalCount >= 4:
+                    response = (f"- {memory.TieredMinionCount} Tier 3 Minions, {memory.RivalCount - (4 * (i + 1))} Tier 3 Rivals, and {i + 1} Tier 3 Bosses")
+                    if response not in memory.Responses:
+                        memory.Responses.append(response)
+                    memory.TieredRivalCount -= 4
+                else:
+                    pass
 
-    for i in range(abs(-memory.MinionCount // 2)):
-        print(f"- {memory.MinionCount - (2 * i)} Tier 3 Minions, {i} Tier 3 Rivals, and ? Tier 3 Bosses")
+    memory.Responses.append("")
+    memory.Responses.append("TIER 4")
 
-    print("")
-    print("TIER 4")
+    memory.MinionCount = MinionCalculation(4, memory.Threat, memory.PartyTier)
+    memory.RivalCount = 0
+    memory.BossCount = 0
+    memory.MaxBosses =  BossCalculation(4, memory.Threat, memory.PartyTier)
+    memory.TieredMinionCount = 0
+    memory.TieredRivalCount = 0
 
-    memory.MinionCount = Calculation(4, memory.Threat, memory.PartyTier)
+    for e in range(memory.MaxBosses):
+        if memory.TieredRivalCount < 4:
+            for i in range(abs(-memory.MinionCount // 2)):
+                memory.RivalCount += 1
+                memory.TieredRivalCount += 1
+                response = (f"- {memory.MinionCount - (2 * i)} Tier 4 Minions, {i} Tier 4 Rivals, and {memory.BossCount} Tier 4 Bosses")
+                if response not in memory.Responses:
+                    memory.Responses.append(response)
+                memory.TieredMinionCount = memory.MinionCount - (2 * i)
+        if memory.RivalCount >= 4:
+            for i in range(abs(-memory.RivalCount // 4)):
+                if memory.TieredRivalCount >= 4:
+                    response = (f"- {memory.TieredMinionCount} Tier 4 Minions, {memory.RivalCount - (4 * (i + 1))} Tier 4 Rivals, and {i + 1} Tier 4 Bosses")
+                    if response not in memory.Responses:
+                        memory.Responses.append(response)
+                    memory.TieredRivalCount -= 4
+                else:
+                    pass
 
-    for i in range(abs(-memory.MinionCount // 2)):
-        print(f"- {memory.MinionCount - (2 * i)} Tier 4 Minions, {i} Tier 4 Rivals, and ? Tier 4 Bosses")
+    for response in memory.Responses:
+        print(response)
 
 
 if __name__ == "__main__":
