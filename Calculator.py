@@ -4,7 +4,7 @@ from Adversaries import *
 def EasyThreat(PartyNumber):
     return PartyNumber * 0.5
 
-def MediumThreat(PartyNumber):
+def AverageThreat(PartyNumber):
     return PartyNumber
 
 def HardThreat(PartyNumber):

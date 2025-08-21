@@ -11,7 +11,6 @@ class MemoryBank():
             self.TieredRivalCount = 0
             self.BossCount = 0
             self.MaxBosses = 0
-            self.Responses = []
         except ValueError:
             print("Please use digits for the party Tier and number of party members!")
             exit()
@@ -23,7 +22,7 @@ class MemoryBank():
         if 0 >= self.PartyNumber:
             print("Invalid party size!")
             exit()
-        if self.EncounterDifficulty not in ("easy", "medium", "hard"):
+        if self.EncounterDifficulty not in ("easy", "average", "hard"):
             print("Invalid dificulty!")
             exit()
 
