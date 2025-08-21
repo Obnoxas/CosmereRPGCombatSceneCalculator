@@ -23,8 +23,8 @@ class MemoryBank():
             print("Invalid party size!")
             exit()
         if self.EncounterDifficulty not in ("easy", "average", "hard"):
-                print("Invalid dificulty!")
-                exit()
+            print("Invalid dificulty!")
+            exit()
 
     def UpdateThreat(self, NewThreat):
         self.Threat = NewThreat
