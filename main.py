@@ -38,6 +38,7 @@ def main():
             print(f"- {memory.TieredMinionCount} Tier {t + 1} Minions, {memory.TieredRivalCount - 4} Tier {t + 1} Rivals, and {memory.MaxBosses} Tier {t + 1} Bosses")
         print("")
         print("")
+        input()
 
 if __name__ == "__main__":
     main()
